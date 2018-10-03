@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion(compileSdk)
+    buildToolsVersion(buildTools)
+
+    defaultConfig {
+        minSdkVersion(minSdk)
+        targetSdkVersion(targetSdk)
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        debug {}
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions defaultDimen
+
+    productFlavors {
+        standard {
+            dimension defaultDimen
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api "com.google.ar.sceneform:core:1.5.0"
+    api "com.google.ar.sceneform.ux:sceneform-ux:1.5.0"
+}
+
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+
+sceneform.asset('sampledata/flatplane/black_plane.obj',
+        'sampledata/flatplane/externalTexture.mat',
+        'sampledata/flatplane/black_plane.sfa',
+        'src/main/res/raw/black_plane')
