@@ -1,0 +1,37 @@
+material {
+    "name" : "Chroma Key Video Material",
+    "defines" : [
+        "baseColor"
+    ],
+    "parameters" : [
+        {
+           // The texture displaying the frames of the video.
+           "type" : "samplerExternal",
+           "name" : "videoTexture"
+        }
+    ],
+    "requires" : [
+        "position",
+        "uv0"
+    ],
+    "shadingModel" : "unlit",
+    // Blending is "masked" instead of "transparent" so that the shadows account for the
+    // transparent regions of the video instead of just the shape of the mesh.
+    "blending" : "masked",
+    // Material is double sided so that the video is visible when walking behind it.
+    "doubleSided" : true
+}
+
+fragment {
+    void material(inout MaterialInputs material) {
+        prepareMaterial(material);
+
+        vec2 uv = getUV0();
+
+        if (!gl_FrontFacing) {
+          uv.x = 1.0 - uv.x;
+        }
+
+        material.baseColor = texture(materialParams_videoTexture, uv).rgba;
+    }
+}
