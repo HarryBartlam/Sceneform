@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Sceneform</string>
+
+
+    <string name="camera_permission_deny">This app needs Camera Permission</string>
+    <string name="camera_permission_disabled">An error was detected</string>
+    <string name="camera_permission_disabled_actions">Settings</string>
+
 </resources>
