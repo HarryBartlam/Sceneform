@@ -7,8 +7,9 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.ar.sceneform:plugin:1.5.0'//make sure to have this version of the AS plugin installed
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -19,6 +20,14 @@ allprojects {
     repositories {
         google()
         jcenter()
+    }
+    ext {
+        buildNumber = 1
+        targetSdk = 28
+        minSdk = 24
+        compileSdk = 28
+        buildTools = '28.0.3'
+        defaultDimen = "default"
     }
 }
 
