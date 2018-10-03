@@ -105,10 +105,8 @@ class SceneFormPresenter(view: SceneFormMvp.View,
 
         val node = Node()
 
-//        node.localScale = Vector3(image.extentX, image.extentZ, 0.05f)
         node.localScale = Vector3(0.019f, 0.0035f, 0.013f)// model is not using the correct metrics so done manually
-
-        Timber.d("$$$ got ${image.extentX}, ${image.extentZ}")
+//        Timber.d("$$$ got ${image.extentX}, ${image.extentZ}")
         node.localRotation = Quaternion.axisAngle(Vector3(0f, 1f, 0f), -90f)
         node.setParent(androidAnchor)
 
