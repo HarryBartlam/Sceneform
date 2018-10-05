@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation project(":modals")
+    implementation project(':sceneform')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
