@@ -7,8 +7,8 @@ This project uses Augmented Images from ARCore to track and physically locate pr
 ## Architecture  
 The code created for this project uses the MVP design architecture and a module approach 
 ### Modules
-This project is made of 2 modules **modals > app**
-- **modals** 				(SceneForm library, 3d objects and image rec DB)
+This project is made of 2 modules **sceneform > app**
+- **sceneform** 				(SceneForm library, 3d objects and image rec DB)
 - **app** 					(base MVP and app arch, Activity, layout etc)
 
 
